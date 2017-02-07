@@ -170,7 +170,7 @@ Category.prototype = {
         action.setAttribute('data-action', 'collapse').setAttrs({
             title : M.util.get_string('collapsecategory', 'moodle', this.getName())
         }).one('img').setAttrs({
-            src : M.util.image_url('t/switch_minus', 'moodle'),
+            src : M.util.image_url('t/switch', 'moodle'),
             alt : M.util.get_string('collapse', 'moodle')
         });
         if (ul) {

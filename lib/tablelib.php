@@ -1177,7 +1177,7 @@ class flexible_table {
                                     'aria-expanded' => 'false',
                                     'aria-controls' => $ariacontrols);
             return html_writer::link($this->baseurl->out(false, array($this->request[TABLE_VAR_SHOW] => $column)),
-                    html_writer::empty_tag('img', array('src' => $OUTPUT->pix_url('t/switch_plus'), 'alt' => get_string('show'))),
+                    html_writer::empty_tag('img', array('src' => $OUTPUT->pix_url('t/switch'), 'alt' => get_string('show'))),
                     $linkattributes);
 
         } else if ($this->headers[$index] !== NULL) {
@@ -1185,7 +1185,7 @@ class flexible_table {
                                     'aria-expanded' => 'true',
                                     'aria-controls' => $ariacontrols);
             return html_writer::link($this->baseurl->out(false, array($this->request[TABLE_VAR_HIDE] => $column)),
-                    html_writer::empty_tag('img', array('src' => $OUTPUT->pix_url('t/switch_minus'), 'alt' => get_string('hide'))),
+                    html_writer::empty_tag('img', array('src' => $OUTPUT->pix_url('t/switch'), 'alt' => get_string('hide'))),
                     $linkattributes);
         }
     }

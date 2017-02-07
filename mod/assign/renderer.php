@@ -1160,7 +1160,7 @@ class mod_assign_renderer extends plugin_renderer_base {
 
                 $expandstr = get_string('viewfull', 'assign');
                 $options = array('class'=>'expandsummaryicon expand_' . $classsuffix);
-                $o .= $this->output->pix_icon('t/switch_plus', $expandstr, null, $options);
+                $o .= $this->output->pix_icon('t/switch', $expandstr, null, $options);
 
                 $jsparams = array($submissionplugin->plugin->get_subtype(),
                                   $submissionplugin->plugin->get_type(),
@@ -1189,7 +1189,7 @@ class mod_assign_renderer extends plugin_renderer_base {
             if ($showviewlink) {
                 $o .= $this->output->box_start('boxaligncenter hidefull full_' . $classsuffix);
                 $classes = 'expandsummaryicon contract_' . $classsuffix;
-                $o .= $this->output->pix_icon('t/switch_minus',
+                $o .= $this->output->pix_icon('t/switch',
                                               get_string('viewsummary', 'assign'),
                                               null,
                                               array('class'=>$classes));
@@ -1265,7 +1265,7 @@ class mod_assign_renderer extends plugin_renderer_base {
 
                 $expandstr = get_string('viewfull', 'assign');
                 $options = array('class'=>'expandsummaryicon expand_' . $classsuffix);
-                $o .= $this->output->pix_icon('t/switch_plus', $expandstr, null, $options);
+                $o .= $this->output->pix_icon('t/switch', $expandstr, null, $options);
 
                 $jsparams = array($feedbackplugin->plugin->get_subtype(),
                                   $feedbackplugin->plugin->get_type(),
@@ -1291,7 +1291,7 @@ class mod_assign_renderer extends plugin_renderer_base {
             if ($showviewlink) {
                 $o .= $this->output->box_start('boxaligncenter hidefull full_' . $classsuffix);
                 $classes = 'expandsummaryicon contract_' . $classsuffix;
-                $o .= $this->output->pix_icon('t/switch_minus',
+                $o .= $this->output->pix_icon('t/switch',
                                               get_string('viewsummary', 'assign'),
                                               null,
                                               array('class'=>$classes));

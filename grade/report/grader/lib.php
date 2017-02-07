@@ -1588,16 +1588,16 @@ class grade_report_grader extends grade_report {
             $url = new moodle_url($this->gpr->get_return_url(null, array('target' => $element['eid'], 'sesskey' => sesskey())));
 
             if (in_array($element['object']->id, $this->collapsed['aggregatesonly'])) {
-                $url->param('action', 'switch_plus');
-                $icon = $OUTPUT->action_icon($url, new pix_icon('t/switch_plus', $strswitchplus), null, null);
+                $url->param('action', 'switch');
+                $icon = $OUTPUT->action_icon($url, new pix_icon('t/switch', $strswitchplus), null, null);
                 $showing = get_string('showingaggregatesonly', 'grades');
             } else if (in_array($element['object']->id, $this->collapsed['gradesonly'])) {
                 $url->param('action', 'switch_whole');
                 $icon = $OUTPUT->action_icon($url, new pix_icon('t/switch_whole', $strswitchwhole), null, null);
                 $showing = get_string('showinggradesonly', 'grades');
             } else {
-                $url->param('action', 'switch_minus');
-                $icon = $OUTPUT->action_icon($url, new pix_icon('t/switch_minus', $strswitchminus), null, null);
+                $url->param('action', 'switch');
+                $icon = $OUTPUT->action_icon($url, new pix_icon('t/switch', $strswitchminus), null, null);
                 $showing = get_string('showingfullmode', 'grades');
             }
         }
@@ -1815,14 +1815,14 @@ class grade_report_grader extends grade_report {
         $collapsed = static::get_collapsed_preferences($courseid);
 
         switch ($action) {
-            case 'switch_minus': // Add category to array of aggregatesonly
+            case 'switch': // Add category to array of aggregatesonly
                 if (!in_array($targetid, $collapsed['aggregatesonly'])) {
                     $collapsed['aggregatesonly'][] = $targetid;
                     static::set_collapsed_preferences($courseid, $collapsed);
                 }
                 break;
 
-            case 'switch_plus': // Remove category from array of aggregatesonly, and add it to array of gradesonly
+            case 'switch': // Remove category from array of aggregatesonly, and add it to array of gradesonly
                 $key = array_search($targetid, $collapsed['aggregatesonly']);
                 if ($key !== false) {
                     unset($collapsed['aggregatesonly'][$key]);
