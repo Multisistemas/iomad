@@ -40,17 +40,6 @@ $string['auth_token_disable_debugdisplay'] = ' * Disable debugdisplay in order t
 $string['auth_token_error_authentication_process'] = "Error in authentication process of {\$a}";
 $string['auth_token_error_complete_user_data'] = "Failed to complete user data of {\$a}";
 $string['auth_token_error_complete_user_login'] = "Failed to complete user login of {\$a}";
-$string['auth_token_error_general_user_login'] = "We are sorry but we did not find your name in our Learning Management System(LMS).  Please send an email to LMS_Support@astm.org with the following information:</br><ul><li>First Name</li><li>Last Name</li><li>Email</li><li>Organization</li></ul></br>We will send you a reply email once your account has been created in the LMS.</br>";
-/**
-* Strings for the user name validation and water mark string
-* @author Ayaj Mulani.
-* @since March 3 of 2016
-* @paradiso
-*/
-$string['auth_token_error_login_page_username_warning'] = "Please enter a valid username "; 
-$string['or'] = "-or-";
-$string['watermark_username'] = "Username";
-$string['watermark_password'] = "Password";
-$string['password_warning'] = "Please enter a valid password";
-$string['blk_username'] = "Please enter your username";
-$string['blk_password'] = "Please enter your password";
+$string['auth_token_error_general_user_login'] = "We are sorry but we did not find your name in our Learning Management System(LMS). Please contact support to solve this issue.</br>";
+
+

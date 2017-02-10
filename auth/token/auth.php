@@ -112,42 +112,10 @@ class auth_plugin_token extends auth_plugin_base {
     }
 
     function logoutpage_hook() {
-        global $CFG;
+          global $CFG;
         global $redirect;
-
-        $redirect = $CFG->wwwroot;
-
-
-        /**
-        * We are going to check if the logout url is set and enabled for the current company
-        * if so we have to redirect the user to the url in the settings page
-        *
-        * @issue #507
-        * @author Yassir
-        * @since 2016-06-15
-        * @paradiso
-        */
-        require_once "{$CFG->dirroot}/blocks/iomad_company_admin/lib.php";
-        require_once "{$CFG->dirroot}/theme/paradisolmsfull/classes/settings/general.php";
-
-        $context = context_system::instance();
-        $companyid = iomad::get_my_companyid($context, false);
-        if(!$companyid)
-            $companyid = null;
+        $redirect = 'http://develop.paradisosolutions.com/escoffier/?page_id=35';
         
-        $settings = new theme_paradisolmsfull_settings_general($companyid);
-        $settings->load();
-
-        if($settings->logoutRedirectUrlEnabled)
-        {
-            $redirectUrl = $settings->logoutRedirectUrl;
-            if(!empty($redirectUrl))
-            {
-                $redirect = $redirectUrl;
-            }
-        }
-
-
         /* Comentado por juan gabriel ramirez
 	    if(isset($this->config->dosinglelogout) && $this->config->dosinglelogout) {
 	        set_moodle_cookie('nobody');
@@ -267,17 +235,10 @@ class auth_plugin_token extends auth_plugin_base {
 
         $user = $DB->get_record('user', array('id'=>$user->id));
         events_trigger('user_created', $user);
-        
-        /**
-        * Comment this lines to prevent error with integration whit SharePoint
-        * @author Esteban E.
-        * @since May 12 of 2016
-        * @paradiso
-        */
 
-        // if (! send_confirmation_email($user)) {
-        //     print_error('noemail', 'auth_token');
-        // }
+        if (! send_confirmation_email($user)) {
+            print_error('noemail', 'auth_token');
+        }
 
         if ($notify) {
             $emailconfirm = get_string('emailconfirm');
